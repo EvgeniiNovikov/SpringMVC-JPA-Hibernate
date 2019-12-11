@@ -71,26 +71,26 @@ public class RootConfig {
         return dataSource;
     }
 
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
-        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource());
-        entityManagerFactoryBean.setPackagesToScan("models");
-        entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
-        entityManagerFactoryBean.setJpaVendorAdapter(getVendorAdapter());
-        entityManagerFactoryBean.setJpaProperties(addProperties());
-        return entityManagerFactoryBean;
-    }
+//     @Bean
+//     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+//         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
+//         entityManagerFactoryBean.setDataSource(dataSource());
+//         entityManagerFactoryBean.setPackagesToScan("models");
+//         entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
+//         entityManagerFactoryBean.setJpaVendorAdapter(getVendorAdapter());
+//         entityManagerFactoryBean.setJpaProperties(addProperties());
+//         return entityManagerFactoryBean;
+//     }
 
-    @Bean
-    public JpaVendorAdapter getVendorAdapter() {
-        return new HibernateJpaVendorAdapter();
-    }
+//     @Bean
+//     public JpaVendorAdapter getVendorAdapter() {
+//         return new HibernateJpaVendorAdapter();
+//     }
 
-    @Bean(name = "transactionManager")
-    public PlatformTransactionManager platformTransactionManager() {
-        return new JpaTransactionManager(entityManagerFactory().getObject());
-    }
+//     @Bean(name = "transactionManager")
+//     public PlatformTransactionManager platformTransactionManager() {
+//         return new JpaTransactionManager(entityManagerFactory().getObject());
+//     }
 
 //    @Bean
 //    public PersistenceExceptionTranslationPostProcessor exceptionTranslationPostProcessor() {
